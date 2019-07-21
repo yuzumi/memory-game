@@ -4,7 +4,7 @@ import * as serviceWorker from './serviceWorker';
 
 import App from 'App';
 
-import 'index.scss';
+import 'styles/index.scss';
 
 render(
   <App />, 
