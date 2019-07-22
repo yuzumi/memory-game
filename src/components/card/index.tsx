@@ -6,10 +6,11 @@ import './index.scss';
 interface CardProps {
   type: string;
   isFlipped: boolean;
+  isSolved: boolean;
   onClick: () => void;
 };
 
-const MemoryCard: FunctionComponent<CardProps> = ({ type, isFlipped, onClick }) => (
+const MemoryCard: FunctionComponent<CardProps> = ({ type, isFlipped, isSolved, onClick }) => (
   <div
     className={classnames(
       'flip-container', {
@@ -23,7 +24,7 @@ const MemoryCard: FunctionComponent<CardProps> = ({ type, isFlipped, onClick }) 
           'front': isFlipped,
           'back': !isFlipped
         })}
-        src={isFlipped
+        src={isFlipped || isSolved
           ? `/images/${type}.svg`
           : `/images/badge.svg`}
         alt={type}
